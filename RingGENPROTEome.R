@@ -15,7 +15,11 @@ library(stringr)
 #### COLORS AND GRADIENTS ####
 cols<-c("indianred","yellowgreen","royalblue1") # Colors reprenseting each sample
 #### LOADING DATA ####
-TB<-read.table("Prueba.txt",header=TRUE,row.names=1,check.names=FALSE,dec=".",sep="\t") ## CIRCULAR PROTEOME: 3 CIRCLES (I,A,E) USING REL. ABUN. (5 JUN 2019) ##
+## This example has been developed for Proteomics data.
+# The script could be adapted also for data from other nature, like genomic data
+## Initial data is a 6 columns table for 3 samples (2 columns each) with their relative abundance (ng/µg) and the error (SD)
+## Rows corresponds with data per each KO from kegg where proteins detected proteins have been classified
+TB<-read.table("Prueba.txt",header=TRUE,row.names=1,check.names=FALSE,dec=".",sep="\t") 
 M<-as.matrix(TB[,c(1,3,5)]) # Matrix with values
 Md<-as.matrix(TB[,c(2,4,6)]) # Matrix with SD
 
