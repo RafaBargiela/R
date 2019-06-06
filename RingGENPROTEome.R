@@ -1,5 +1,5 @@
 ##########################################################################################
-###		            Genome/Proteome ring graph                                  ############ 
+###		            Genome/Proteome ring graph                                   ###########
 ### Author: Dr. Rafael Bargiela Bargiela                                          ########
 ### Resume: An example of drawing data over whole proteome/Genome                 ########
 ###         circular representation                                               ######## 
