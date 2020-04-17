@@ -54,8 +54,11 @@ for(s in 1:ncol(M)){
     nSd<-as.numeric(Md[k,s]) # SD of the expression value
     if(n>0){
       rr<-sum(lvExp<=n) # Closest value to n in lvExp (position in the vector)
-      rrr<-n*1/lvExp[rr+1] # Additional proportion to add to the radius to get specific value
-      rrrSd<-(n+nSd)*1/lvExp[rr+1] # Same but for SD
+          d1<-(n-LvExp[rr]) # Difference between value and closest minimum level of expression
+          d2<-(LvExp[rr+1]-LvExp[rr]) # Difference between closest minimum level and closest maximum level
+      rrr<-d1/d2 # Additional proportion to add to the radius to get specific value
+          dSd<-((n+nSd)-LvExp[rr]) # Difference between value and closest minimum level of expression
+      rrrSd<-dSd/d2 # Additional proportion to add to the radius in case of SD
       rf<-ri[s]+(rw*rr)+(rw*rrr) # End radius for each KO is the Initial radius (ri) + radius of corresponding subcircle + proporcional % inside each level
       rfSd<-ri[s]+(rw*rr)+(rw*rrrSd)
       # Calculating all coordinates for each specific bar
