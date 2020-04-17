@@ -1,4 +1,6 @@
-
+# This function creates ball of concentric rings according to abundances, intensities or other type of units
+# Function is adapted to directly work with a Matrix of data and display the balls in a vertical plot, so you
+# need to draw the figure base plot first.
 DrawBalls<-function(M,pal,balls=c(0.001,0.01,0.1,1,10,100),rr=seq(0.8,2.25,length.out=length(balls))){
   # M : Matrix of values to plot
   # pal : color palette (vector or matrix). Should be same length than balls and rr vectors, from light to dark.
