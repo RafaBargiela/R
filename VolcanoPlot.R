@@ -28,8 +28,8 @@ library(colorspace)
       r<-300
       ylim<-c(0,45)
       xlim<-c(-30,30)
-      xlab<-expression(bold("Fold Change of log"["2"]~"(ASV abundance)")
-      ylab<-expression(bold("-log"["10"]~"(p-values)")
+      xlab<-expression(bold("Fold Change of log"["2"]~"(ASV abundance)"))
+      ylab<-expression(bold("-log"["10"]~"(p-values)"))
       vertical.lines.x<-c(-2.5,2.5)
       horiz.lines.y<-1.25  
       pv.labels.threshold<-10
