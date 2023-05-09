@@ -14,8 +14,7 @@ library(colorspace)
   # Then, you need a column for the fold-change and another for the p-values
   PIstats<-read.table(file=File,row.names=1,header=TRUE,dec=".",sep="\t",check.names=FALSE)
   OUTPUT<-"Volcano.jpg"
-  
-  # 1. Volcano plot ####  
+  ## 1. Volcano plot ####  
     ### 1.1. Setting up the variables ---------------
       FC<-log(PIstats[,1],base=2) # Fold change
       pv<--log(PIstats[,2],base=10) # p-values
@@ -48,11 +47,11 @@ library(colorspace)
       # ycorr[c("")]<-c()
       # xcorr[""]<-c()
     ## Plotting Volcano Plot  
-      jpeg(OUTPUT,height=2000,width=2000,res=300,quality=100)
+      jpeg(OUTPUT,height=h,width=w,res=r,quality=100)
         par(mar=c(5,4,4,2),mgp=c(2.5,1,0))
-        plot(NA,NA,xlim=xlim,ylim=ylim,xlab=list(xlab),cex=1.2,font=2),
-             ylab=list(ylab),font=2,cex=1.2),axes=FALSE)
-        axis(1,seq(xlim[1],xlim[2],10),labels=TRUE,tick=TRUE,lwd.ticks=2,las=1,cex.axis=1.2,font.axis=2)
+        plot(NA,NA,xlim=xlim,ylim=ylim,xlab=list(xlab,cex=1.2,font=2),
+             ylab=list(ylab,font=2,cex=1.2),axes=FALSE)
+          axis(1,seq(xlim[1],xlim[2],10),labels=TRUE,tick=TRUE,lwd.ticks=2,las=1,cex.axis=1.2,font.axis=2)
           yi<-ylim[2]+((ylim[2]*15)/100)
           yw<-(yi-0)/100
           rect(xlim[1],yi,0,0,border=NA,col=rgb(t(col2rgb("thistle2")),alpha=100,maxColorValue=255),xpd=TRUE)
